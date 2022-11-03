@@ -26,7 +26,31 @@ Example 3:
 ***********************************************************************/
 
 // Your code here
+let coinCollector = numCoin => {
+  let arr = [];
+  let coin = numCoin;
 
+  if(coin > 1) {
+    return function calCoin(...number) {
+      number.forEach(el => {return arr.push(el)})
+
+    }
+  } return arr.push(coin);
+
+  // if (numCoin === 1) {return arr.push(numCoin)}
+
+  // return function call(...coin) {
+  //   if (coin.length > 1) {
+  //     arr.push(coin)
+  //     coin--;
+  //      return call;
+  //   } if (coin.length === 1) {
+  //     return coinCollector;
+  //   }
+
+  // }
+
+}
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
