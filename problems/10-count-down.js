@@ -9,7 +9,7 @@ returns a string of "Happy New Year!". Look closely at how this function is
 invoked below:
 
 Example 1:
-  console.log(countDownTimer(0)); // prints "Happy New Year!"
+
 
 Example 2:
   let oneDay = countDownTimer(1); // returns a function
@@ -21,15 +21,40 @@ Example 3:
   console.log(twoDays()); // prints "Happy New Year!"
 
 Example 4:
-  let threeDays = countDownTimer(3); // returns a function
+
+
+***********************************************************************/
+let countDownTimer = (i) =>{
+  let j = i
+console.log('here', j)
+  if(j === 0){
+    return "Happy New Year!"
+  //  return function(){
+  //     return "Happy New Year!"
+  //   }
+  }
+  else{
+    return function count(){
+      if( j > 0){
+        j--;
+        // return count
+      }
+      if( j === 0){
+        return "Happy New Year!"
+      }
+      return count
+    }
+
+  }
+
+}
+ console.log(countDownTimer(0)); // prints "Happy New Year!"
+// let threeDays = countDownTimer(3);
+// Your code here
+let threeDays = countDownTimer(3); // returns a function
   console.log(threeDays()); // returns a function
   console.log(threeDays()); // returns a function
   console.log(threeDays()); // prints "Happy New Year!"
-
-***********************************************************************/
-
-// Your code here
-
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
 try {
