@@ -21,7 +21,25 @@ let smoothie2 = smoothieMachine("apples", "bananas", "berries");
 console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
+function smoothieMachine (...string){
+  let base = "I'm having a smoothie with "
+  return function(counter)  {
+    return base += " and " + counter
 
+  }
+  // let arr = string;
+  // let base = "I'm having a smoothie with "
+  // arr.join(' and ')
+  // return function(...element){
+  //   if(element[0] === undefined){
+  //     return base += arr
+  //   }else{
+  //     let seconds = ' and ' + element.join(' and ');
+  //   return base += arr + seconds
+  //   }
+
+  // }
+}
 // Your code here
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
