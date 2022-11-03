@@ -12,26 +12,63 @@ function returned by recVolume should continue to return the original volume.
 
 
 ***********************************************************************/
-
-// Your code here
-
-let recVolume = height => {
-let volume = height
-  return function (width) {
-    volume *= width
-    return function (length) {
-
-      return volume *= length;
-
+let recVolume = height =>{
+  let volume ;
+  if(height){
+    volume = height
+    return (width)=>{
+      if(width) {
+        volume = height * width
+        return (Length)=>{
+          if(Length){
+            return volume = height* width * Length
+          }
+          return volume
+        }
+      }
+      return volume
     }
-
   }
+  return volume
 
 }
+// Your code here
+// let recVolume = number =>{
+//   let value = [];
 
-console.log(recVolume(1)) //function
-console.log(recVolume(1)) //function
-console.log(recVolume(1)) //1
+//   return function(){
+//     value.push(number)
+//     console.log('here',value)
+
+//   //   if(value[2] === undefined){
+//   //   value.push(number)
+//   //   console.log('here',value)
+//   // }
+//   // else if(value[2] !== undefined){
+
+//   //   return value.reduce((i , j) =>{
+//   //     i *= j
+//   //   },1)
+//   }
+// }
+
+// let recVolume = height => {
+// let volume = height
+//   return function (width) {
+//     volume *= width
+//     return function (length) {
+
+//       return volume *= length;
+
+//     }
+
+//   }
+
+// }
+;
+// console.log(recVolume(1)) //function
+// console.log(recVolume(1)) //function
+// console.log(recVolume(1)) //1
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
