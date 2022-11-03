@@ -21,26 +21,48 @@ let smoothie2 = smoothieMachine("apples", "bananas", "berries");
 console.log(smoothie2("pineapple"));
 // prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 ***********************************************************************/
-function smoothieMachine (...string){
+function smoothieMachine (cb, ...string){
+  let base = ["I'm having a smoothie with "]
+  return function(...item) {
+    // console.log(item)
+
+    // return base.join(' ' + 'and' + item)
+  //   let base = "I'm having a smoothie with "
+  // console.log(string);
+  // return function(counter)  {
+  //   return base += " and " + counter
+
+  let arr = string;
   let base = "I'm having a smoothie with "
-  return function(counter)  {
-    return base += " and " + counter
+  arr.join(' and ')
+  return function(...element){
+    arr = [...arr, ...element]
+    arr.join(' and ')
+    return base + arr;
+
 
   }
-  // let arr = string;
-  // let base = "I'm having a smoothie with "
-  // arr.join(' and ')
-  // return function(...element){
-  //   if(element[0] === undefined){
-  //     return base += arr
-  //   }else{
-  //     let seconds = ' and ' + element.join(' and ');
-  //   return base += arr + seconds
+
+}
+}
+
   //   }
 
   // }
-}
-// Your code here
+//}
+// Your code here+
+let smoothie1 = smoothieMachine();
+
+console.log(smoothie1("milk"));
+// prints "I'm having a smoothie with milk"
+console.log(smoothie1("kale", "spinach"));
+// prints "I'm having a smoothie with milk and kale and spinach"
+console.log(smoothie1("honey", "pears", "berries"));
+// prints "I'm having a smoothie with milk and kale and spinach and honey and pears and berries"
+
+let smoothie2 = smoothieMachine("apples", "bananas", "berries");
+console.log(smoothie2("pineapple"));
+// prints "I'm having a smoothie with apples and bananas and berries and pineapple"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 try {
